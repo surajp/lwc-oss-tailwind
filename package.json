@@ -1,0 +1,40 @@
+{
+  "name": "lwc-oss-tailwind",
+  "version": "0.0.1",
+  "author": "Suraj Pillai",
+  "bugs": "https://github.com/Suraj Pillai/lwc-oss-tailwind/issues",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0"
+  },
+  "engines": {
+    "node": ">=10.13.0",
+    "npm": ">=6.4.1",
+    "yarn": ">=1.9.4"
+  },
+  "homepage": "https://github.com/Suraj Pillai/lwc-oss-tailwind",
+  "keywords": [
+    "lwc"
+  ],
+  "license": "MIT",
+  "repository": "Suraj Pillai/lwc-oss-tailwind",
+  "scripts": {
+    "build": "lwc-services build -m production -w webpack.config.js",
+    "build:development": "lwc-services build -w webpack.config.js",
+    "lint": "eslint ./src/**/*.js",
+    "precommit": "npm run prettier:verify && [ $? -eq 0 ] && npm run lint",
+    "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+    "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+    "start": "node scripts/server.js",
+    "test:unit": "lwc-services test:unit",
+    "test:unit:coverage": "lwc-services test:unit --coverage",
+    "test:unit:debug": "lwc-services test:unit --debug",
+    "test:unit:watch": "lwc-services test:unit --watch",
+    "watch": "lwc-services watch -w webpack.config.js"
+  },
+  "devDependencies": {
+    "@lwc/synthetic-shadow": "^2.6.2",
+    "tailwindcss": "^3.0.5"
+  }
+}
