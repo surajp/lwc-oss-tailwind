@@ -1,6 +1,6 @@
 const exec = require('child_process').exec;
 const { performance } = require('perf_hooks');
-class TailwindPack {
+class TailwindPlugin {
     lastCompileTime;
     compiledOnce = false;
     compileInterval;
@@ -20,4 +20,4 @@ class TailwindPack {
         });
     }
 }
-module.exports = TailwindPack;
+module.exports = TailwindPlugin;
